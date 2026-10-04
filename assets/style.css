@@ -80,6 +80,7 @@ th { color: var(--muted); font-weight: 500; white-space: nowrap; }
   margin: 16px 0;
 }
 
+.site-footer p { margin: 0 0 8px; line-height: 1.7; }
 .site-footer {
   max-width: 760px;
   margin: 0 auto;
