@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'ja' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+  <link rel="icon" type="image/png" href="{{ '/assets/favicon.png' | relative_url }}">
+  <link rel="apple-touch-icon" href="{{ '/assets/apple-touch-icon.png' | relative_url }}">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="{{ '/' | relative_url }}"><img src="{{ '/assets/apple-touch-icon.png' | relative_url }}" alt="" width="28" height="28">KASANE</a>
+    <nav>
+      <a href="{{ '/privacy/' | relative_url }}">プライバシーポリシー</a>
+      <a href="{{ '/support/' | relative_url }}">サポート</a>
+    </nav>
+  </header>
+  <main class="content">
+    {{ content }}
+  </main>
+  <footer class="site-footer">
+    <p>© {{ 'now' | date: '%Y' }} Takato Yoshida</p>
+  </footer>
+</body>
+</html>
