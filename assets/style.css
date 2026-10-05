@@ -22,7 +22,7 @@ body {
 
 a { color: var(--link); }
 
-/* 画面の左上と右下に差す光。スクロールに合わせて、アプリの節目の色(藍→千歳緑→深緋→江戸紫→金)に変わる(glow.js) */
+/* 画面の左上と右下(スマホでは上)に差す光。スクロールに合わせて、アプリの節目の色(藍→千歳緑→深緋→江戸紫→金)に変わる(glow.js) */
 .glow {
   position: fixed;
   inset: 0;
@@ -30,8 +30,16 @@ a { color: var(--link); }
   z-index: -1;
   /* 左上と右下から、斜めに光が差す */
   background:
-    radial-gradient(ellipse 90% 70% at 0% 0%, var(--glow, rgba(47, 79, 154, 0.65)), transparent 70%),
-    radial-gradient(ellipse 90% 70% at 100% 100%, var(--glow, rgba(47, 79, 154, 0.65)), transparent 70%);
+    radial-gradient(ellipse 90% 70% at 0% 0%, var(--glow, rgba(47, 79, 154, 0.8)), transparent 70%),
+    radial-gradient(ellipse 90% 70% at 100% 100%, var(--glow, rgba(47, 79, 154, 0.8)), transparent 70%);
+}
+/* スマホでは、アプリの画面と同じく上から光が差す */
+@media (max-width: 680px) {
+  .glow {
+    inset: 0 0 auto 0;
+    height: 85vh;
+    background: radial-gradient(ellipse 150% 100% at 50% -15%, var(--glow, rgba(47, 79, 154, 0.8)), transparent 80%);
+  }
 }
 
 .site-header {
