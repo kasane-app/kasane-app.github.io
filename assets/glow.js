@@ -18,7 +18,7 @@
     var c = tiers[i].map(function (v, k) {
       return Math.round(v + (tiers[i + 1][k] - v) * f);
     });
-    el.style.setProperty('--glow', 'rgba(' + c.join(',') + ',0.5)');
+    el.style.setProperty('--glow', 'rgba(' + c.join(',') + ',0.8)');
   }
   window.addEventListener('scroll', update, { passive: true });
   window.addEventListener('resize', update);

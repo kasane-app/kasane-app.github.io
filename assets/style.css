@@ -28,10 +28,10 @@ a { color: var(--link); }
   top: 0;
   left: 0;
   right: 0;
-  height: 70vh;
+  height: 85vh;
   pointer-events: none;
   z-index: -1;
-  background: radial-gradient(ellipse 140% 100% at 50% -20%, var(--glow, rgba(47, 79, 154, 0.5)), transparent 75%);
+  background: radial-gradient(ellipse 150% 100% at 50% -15%, var(--glow, rgba(47, 79, 154, 0.8)), transparent 80%);
 }
 
 .site-header {
