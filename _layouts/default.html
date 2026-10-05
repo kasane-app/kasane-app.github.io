@@ -10,6 +10,7 @@
   <link rel="apple-touch-icon" href="{{ '/assets/apple-touch-icon.png' | relative_url }}">
 </head>
 <body>
+  <div class="glow" aria-hidden="true"></div>
   <header class="site-header">
     <a class="brand" href="{{ '/' | relative_url }}"><img src="{{ '/assets/apple-touch-icon.png' | relative_url }}" alt="" width="28" height="28">KASANE</a>
     <nav>
@@ -27,5 +28,6 @@
     </p>
     <p>© {{ 'now' | date: '%Y' }} Takato Yoshida</p>
   </footer>
+  <script src="{{ '/assets/glow.js' | relative_url }}" defer></script>
 </body>
 </html>

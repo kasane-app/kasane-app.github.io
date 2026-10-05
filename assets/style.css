@@ -22,6 +22,18 @@ body {
 
 a { color: var(--link); }
 
+/* 画面の上に差す光。スクロールに合わせて、アプリの節目の色(藍→千歳緑→深緋→江戸紫→金)に変わる(glow.js) */
+.glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70vh;
+  pointer-events: none;
+  z-index: -1;
+  background: radial-gradient(ellipse 140% 100% at 50% -20%, var(--glow, rgba(47, 79, 154, 0.5)), transparent 75%);
+}
+
 .site-header {
   display: flex;
   flex-wrap: wrap;
