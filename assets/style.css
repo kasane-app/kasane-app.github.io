@@ -78,6 +78,9 @@ a { color: var(--link); }
 h1 { font-size: 26px; font-weight: 300; letter-spacing: -0.01em; margin: 16px 0 8px; }
 h2 { font-size: 17px; font-weight: 500; margin: 40px 0 8px; padding-top: 16px; border-top: 1px solid var(--border); }
 h3 { font-size: 15px; font-weight: 500; margin: 24px 0 4px; }
+/* よくある質問: 回答から次の質問まで、ふつうより1行分あける */
+.faq h3 { margin-top: 51px; }
+.faq h3:first-child { margin-top: 24px; }
 p, li { font-size: 15px; color: #d4d4da; }
 .meta, .meta p { color: var(--subtle); font-size: 13px; }
 
