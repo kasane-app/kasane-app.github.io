@@ -12,7 +12,7 @@
   --page: var(--ai);
   --sc-ink: var(--ink);  /* SNS のアイコン(紹介ページと共通の _includes/sns.html)で使う */
 }
-html { background: var(--canvas); scroll-padding-top: 96px; }
+html { background: var(--canvas); scroll-padding-top: 96px; overflow-x: clip; }
 body { margin: 0; background: var(--canvas); color: var(--ink); font-family: var(--mincho); font-weight: 500; -webkit-font-smoothing: antialiased; overflow-x: clip; }
 a { color: inherit; }
 .nb { display: inline-block; }

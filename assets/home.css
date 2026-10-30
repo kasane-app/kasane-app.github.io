@@ -13,7 +13,7 @@
   --latin: "Cormorant Garamond", serif;
   --gut: clamp(20px, 6vw, 96px);
 }
-html { background: var(--sc-canvas); }
+html { background: var(--sc-canvas); overflow-x: clip; }  /* iPhone の Safari は body だけでは横のはみ出しを止めないため */
 body { margin: 0; background: var(--sc-canvas); color: var(--sc-ink); font-family: var(--sc-font-text); font-weight: 500; -webkit-font-smoothing: antialiased; overflow-x: clip; }
 img, video { display: block; }
 a { color: inherit; }
@@ -119,7 +119,10 @@ ruby rt { font-size: .38em; letter-spacing: .12em; color: var(--sc-ink-soft); }
   .hero__copy .body { margin-top: 18px; }
   .hero__copy .store { margin-top: 26px; }
   .hero__far { right: -30vw; top: 30vh; width: 120vw; height: 60vh; }
-  .hero__subject { right: var(--gut); left: var(--gut); width: auto; top: auto; bottom: 17vh; }
+  /* スマホ:文字・ボタンと動画を縦に順に並べる(画面の高さで位置を決めると、Safari の表示域が低いとき重なるため) */
+  .hero [data-sc-stage] { display: flex; flex-direction: column; }
+  .hero .hero__copy { order: -1; position: relative; top: auto; left: auto; right: auto; margin: 96px var(--gut) 0; }
+  .hero .hero__subject { position: relative; top: auto; bottom: auto; left: auto; right: auto; width: auto; margin: clamp(22px, 4vh, 40px) var(--gut) 0; }
   .hero__mid1 { right: 22vw; top: auto; bottom: 26vh; width: 70vw; height: 26vh; }
   .hero__mid2 { right: -6vw; top: auto; bottom: 10vh; width: 64vw; height: 24vh; }
   .hero__front { right: -10vw; width: 120vw; bottom: -26vh; height: 34vh; }
@@ -131,8 +134,9 @@ ruby rt { font-size: .38em; letter-spacing: .12em; color: var(--sc-ink-soft); }
 .origin { padding: clamp(100px, 15vh, 170px) var(--gut) clamp(80px, 12vh, 140px); display: grid; grid-template-columns: minmax(0, 22em) minmax(300px, 1fr) auto; gap: clamp(28px, 4.5vw, 96px); max-width: 1440px; margin: 0 auto; align-items: center; }
 .origin__text { align-self: end; padding-bottom: 4vh; }
 .origin__text .latin { display: block; margin-top: 36px; }
-.origin__head { padding: 6px 14px 14px; }
-.origin__head .h2 { font-size: min(clamp(1.8rem, 1.2rem + 2.6vw, 3.3rem), 6.4vh); line-height: 1.7; letter-spacing: .14em; white-space: nowrap; height: max-content; }
+/* 縦書きの見出しの幅は、文字の大きさから決めておく(iPhone の Safari は縦書きの幅を小さく見積もり、はみ出すため)。2行+ふりがな */
+.origin__head { --fs: min(clamp(1.8rem, 1.2rem + 2.6vw, 3.3rem), 6.4vh); padding: 6px 14px 14px; width: calc(var(--fs) * 3.9); }
+.origin__head .h2 { font-size: var(--fs); line-height: 1.7; letter-spacing: .14em; white-space: nowrap; height: max-content; }
 /* 衿もとの重ね:六色が外から順に重なる図 */
 .eri { margin: 0; justify-self: center; width: min(100%, 470px, 56vh); }
 .eri svg { display: block; width: 100%; height: auto;
@@ -156,7 +160,7 @@ ruby rt { font-size: .38em; letter-spacing: .12em; color: var(--sc-ink-soft); }
 }
 @media (max-width: 760px) {
   .origin { padding-top: 96px; gap: 20px 12px; }
-  .origin__head .h2 { font-size: min(1.7rem, 7.2vw); }
+  .origin__head { --fs: min(1.7rem, 7.2vw); }
   .eri { justify-self: start; }
   .eri figcaption { font-size: 11px; letter-spacing: .06em; }
   .eri figcaption .t { font-size: 12.5px; }
