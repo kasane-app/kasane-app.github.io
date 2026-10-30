@@ -1,141 +1,170 @@
 ---
-layout: default
-description: 日本株・米国株・投資信託の保有を、ヒートマップでひと目に。資産が育つほど、画面の色も深まるiPhoneアプリ。
+layout: home
+title: Kasane(かさね)｜保有株を、一枚の色の地図に
+description: 日本株・米国株・投資信託をヒートマップで見渡し、育つほどに伝統色の光が深まるiPhoneアプリ。会員登録なし、保有データはiPhoneの中だけ。
 ---
+  <!-- 一 題の紙:層が違う速さで動き、手前の和紙が動画の額に重なってくる -->
+  <section class="hero" data-sc-act="pin" data-sc-span="1.7" data-sc-drift="#f2ede4">
+    <div data-sc-stage>
+      <div class="hero__plane hero__far" data-sc-parallax="0.5" aria-hidden="true">
+        <div class="dye"></div>
+        <div class="dye"></div>
+        <div class="dye"></div>
+      </div>
+      <div class="hero__plane hero__mid1" data-sc-parallax="-0.9" aria-hidden="true"><div class="sheet"></div></div>
+      <div class="hero__plane hero__mid2" data-sc-parallax="0.7" aria-hidden="true"><div class="sheet"></div></div>
+      <figure class="hero__plane hero__subject" data-sc-parallax="-0.3" style="margin:0">
+        <div class="plate">
+          <video id="promo" src="{{ '/assets/kasane-promo.mp4' | relative_url }}" poster="{{ '/assets/kasane-promo-poster.jpg' | relative_url }}" muted loop playsinline preload="metadata" aria-label="Kasaneの紹介動画(25秒・音なし)"></video>
+          <div class="plate__foot"><span>紹介動画・25秒</span><button class="plate__btn" id="promoBtn" type="button">再生</button></div>
+        </div>
+      </figure>
+      <div class="hero__plane hero__front" data-sc-parallax="-2.4" aria-hidden="true"><div class="sheet"></div></div>
 
-<section class="hero hero-solo">
-  <div class="hero-text">
-    <p class="eyebrow">IPHONE APP</p>
-    <h1 class="hero-title">保有株を、<br>一枚の色の地図に。</h1>
-    <p class="lead">
-      Kasane(かさね)は、日本株・米国株・投資信託の保有を、ヒートマップでひと目に見られるiPhoneアプリです。
-      資産が育つほど、画面に差す光の色も深まっていきます。
-    </p>
-    <p class="store-badge">
-      <a href="https://apps.apple.com/jp/app/id6819918637">
-        <img src="{{ '/assets/app-store-badge-ja.svg' | relative_url }}" alt="App Storeからダウンロード" width="136" height="50">
-      </a>
-    </p>
-  </div>
-</section>
-
-<figure class="hero-video">
-  <video src="{{ '/assets/kasane-promo.mp4' | relative_url }}" poster="{{ '/assets/kasane-promo-poster.jpg' | relative_url }}"
-    autoplay muted loop playsinline controls preload="metadata" width="1920" height="1080"
-    aria-label="Kasaneの紹介動画。ヒートマップ、評価額の節目で変わる光の色、推移のグラフを紹介している"></video>
-  <figcaption>紹介動画(25秒)。最初は音なしで再生されます。音は動画の操作ボタンから出せます</figcaption>
-</figure>
-
-<section class="feature">
-  <p class="eyebrow">HEATMAP</p>
-  <h2 class="feature-title">大きさは評価額、色は前日比。</h2>
-  <p>
-    保有している銘柄が、評価額に応じた大きさのタイルで並びます。上がった銘柄は緑、下がった銘柄は赤。動きが大きいほど明るく光り、変化のない銘柄は灰色です。
-    どこに資産が偏っているか、今日どれが動いたかが、ひと目でわかります。
-  </p>
-  <ul class="points">
-    <li>日本株・米国株・投資信託をまとめて円で表示(USD/JPYは自動取得)</li>
-    <li>一覧は評価額・損益額・損益率で並び替え</li>
-    <li>色の規則は米国式(上昇=緑)と日本式(上昇=赤)から選べます</li>
-    <li>目のマークで、ホームの金額を隠せます(人前でアプリを開くときに)</li>
-  </ul>
-</section>
-
-<section class="feature">
-  <p class="eyebrow">KASANE COLORS</p>
-  <h2 class="feature-title">資産が育つと、光の色が深まる。</h2>
-  <p>
-    評価額の合計が節目を超えるごとに、画面の上部に差す光の色が変わります。色の名前は、日本の伝統色から。
-    重ねてきた資産の歩みを、色で感じられます。
-  </p>
-  <div class="tiers">
-    <figure class="tier">
-      <img src="{{ '/assets/screens/tier0.jpg' | relative_url }}" alt="墨の画面" loading="lazy" width="480" height="494">
-      <figcaption><span class="dot" style="background:#2a2a30"></span>墨<small>〜100万円</small></figcaption>
-    </figure>
-    <figure class="tier">
-      <img src="{{ '/assets/screens/tier1.jpg' | relative_url }}" alt="藍の画面" loading="lazy" width="480" height="494">
-      <figcaption><span class="dot" style="background:#2f4f9a"></span>藍<small>100万円〜</small></figcaption>
-    </figure>
-    <figure class="tier">
-      <img src="{{ '/assets/screens/tier2.jpg' | relative_url }}" alt="千歳緑の画面" loading="lazy" width="480" height="494">
-      <figcaption><span class="dot" style="background:#1f6e52"></span>千歳緑<small>300万円〜</small></figcaption>
-    </figure>
-    <figure class="tier">
-      <img src="{{ '/assets/screens/tier3.jpg' | relative_url }}" alt="深緋の画面" loading="lazy" width="480" height="494">
-      <figcaption><span class="dot" style="background:#9b2335"></span>深緋<small>500万円〜</small></figcaption>
-    </figure>
-    <figure class="tier">
-      <img src="{{ '/assets/screens/tier4.jpg' | relative_url }}" alt="江戸紫の画面" loading="lazy" width="480" height="494">
-      <figcaption><span class="dot" style="background:#6b3fa0"></span>江戸紫<small>1,000万円〜</small></figcaption>
-    </figure>
-    <figure class="tier">
-      <img src="{{ '/assets/screens/tier5.jpg' | relative_url }}" alt="金の画面" loading="lazy" width="480" height="494">
-      <figcaption><span class="dot" style="background:#b08a3e"></span>金<small>3,000万円〜</small></figcaption>
-    </figure>
-  </div>
-</section>
-
-<section class="feature split">
-  <div>
-    <p class="eyebrow">HISTORY</p>
-    <h2 class="feature-title">毎日の歩みを、<br>グラフに。</h2>
-    <p>
-      アプリを開いた日の評価額を記録し、推移をグラフにします。取得額の線と並べれば、含み損益の広がりが見えてきます。今後、オルカンやS&amp;P500などの指数と重ねて比べられるようにする予定です。
-    </p>
-    <ul class="points">
-      <li>7日・30日・1年・全期間で表示</li>
-      <li>評価額・取得額の線を自由に表示/非表示</li>
-    </ul>
-  </div>
-  <figure class="phone">
-    <img src="{{ '/assets/screens/history.jpg' | relative_url }}" alt="推移の画面(全期間。指数との比較は今後追加予定)。評価額の線、取得額の点線、オルカンとS&amp;P500の線が重ねて表示されている" loading="lazy" width="402" height="874">
-    <figcaption class="phone-caption"><span class="badge">今後追加予定</span>オルカン・S&amp;P500など指数との比較</figcaption>
-  </figure>
-</section>
-
-<section class="feature">
-  <p class="eyebrow">IMPORT &amp; PRIVACY</p>
-  <h2 class="feature-title">取り込みはかんたん。<br>データはiPhoneの中だけに。</h2>
-  <div class="cards">
-    <div class="card">
-      <h3>SBI証券から取り込み</h3>
-      <p>日本株と投資信託は、保有一覧のCSVを選ぶだけ。米国株は、保有一覧の画面のスクリーンショットか、表のコピーで取り込めます。文字の読み取りもiPhoneの中で行います。</p>
+      <div class="hero__copy" data-sc-cue="0 0.9 0 0.18">
+        <h1 class="h1"><span class="nw">色を重ねるように、</span><br><span class="nw">資産を重ねる。</span></h1>
+        <p class="body">保有株を、一枚の色の地図に。日本株・米国株・投資信託をヒートマップで見渡す<span class="nb">iPhoneアプリ。</span></p>
+        <a class="store" href="https://apps.apple.com/jp/app/id6819918637"><img src="{{ '/assets/app-store-badge-ja.svg' | relative_url }}" alt="App Storeからダウンロード" width="140" height="52"></a>
+      </div>
     </div>
-    <div class="card">
-      <h3>アカウント登録なし</h3>
-      <p>会員登録も、証券口座のIDやパスワードの入力も必要ありません。</p>
-    </div>
-    <div class="card">
-      <h3>保有データは外に出さない</h3>
-      <p>保有銘柄はiPhoneの中だけに保存し、開発者のサーバーにも送りません。詳しくは<a href="{{ '/privacy/' | relative_url }}">プライバシーポリシー</a>へ。</p>
-    </div>
-    <div class="card">
-      <h3>載せるものを選んでシェア</h3>
-      <p>ヒートマップと光の色を、1枚の画像にして共有できます。最初は金額を載せない設定です。光の色の名前には節目の金額の目安(例: 1,000万円〜)が添えられるので、載せたくないときは「光の色の名前を表示」をオフにできます。画像はiPhoneの中で作ります。</p>
-    </div>
-    <div class="card">
-      <h3>機種変更もバックアップで</h3>
-      <p>記録を1つのファイルに書き出して、「ファイル」アプリやAirDropで保存できます。新しいiPhoneでも、そのファイルから元に戻せます。</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- SNS のアイコン: Font Awesome Free 6 (https://fontawesome.com) / CC BY 4.0 -->
-<section class="sns-links" aria-label="公式アカウント">
-  <span class="sns-label">公式アカウント</span>
-  <a class="pill" href="https://x.com/kasane_app" target="_blank" rel="noopener"><svg class="sns-icon" viewBox="27 48 460 416" aria-hidden="true" focusable="false"><path d="M389 48L460 48L389 48L460 48L306 224L306 224L487 464L487 464L345 464L345 464L234 319L234 319L107 464L107 464L36 464L36 464L201 276L201 276L27 48L27 48L172 48L172 48L273 181L273 181L389 48L389 48ZM364 422L404 422L364 422L404 422L151 88L151 88L109 88L109 88L364 422L364 422Z"/></svg>X</a>
-  <a class="pill" href="https://www.instagram.com/kasane_app/" target="_blank" rel="noopener"><svg class="sns-icon" viewBox="0 32 448 448" aria-hidden="true" focusable="false"><defs><radialGradient id="ig-grad" cx="0.3" cy="1.07" r="1.3"><stop offset="0" stop-color="#FFDD55"/><stop offset="0.1" stop-color="#FFDD55"/><stop offset="0.5" stop-color="#FF543E"/><stop offset="1" stop-color="#C837AB"/></radialGradient></defs><path fill="url(#ig-grad)" d="M224 141Q175 142 143 175L143 175L143 175Q110 207 109 256Q110 305 143 337Q175 370 224 371Q273 370 305 337Q338 305 339 256Q338 207 305 175Q273 142 224 141L224 141ZM224 331Q192 330 171 309L171 309L171 309Q150 288 149 256Q150 224 171 203Q192 182 224 181Q256 182 277 203Q298 224 299 256Q298 288 277 309Q256 330 224 331L224 331ZM371 136Q368 161 344 163Q319 161 317 136Q317 125 325 117Q332 110 344 110Q355 110 363 117Q370 125 371 136L371 136ZM447 164Q447 109 410 70Q371 33 317 33Q297 32 260 32Q224 32 188 32Q151 32 132 33Q78 33 38 70Q1 109 2 163Q0 183 0 220Q0 256 0 292Q0 328 2 348Q1 403 38 442Q77 479 132 478Q151 479 188 480Q224 480 260 480Q297 479 317 478Q371 479 410 442Q447 403 447 348Q448 328 448 292Q448 256 448 220Q448 183 447 163L447 164ZM399 388Q386 418 356 431Q336 438 302 439Q268 440 240 440Q231 440 224 440Q217 440 208 440Q180 440 146 439Q113 438 92 431Q62 418 49 388Q42 367 41 334Q40 300 40 272Q40 263 40 256Q40 249 40 240Q40 212 41 178Q42 144 49 124Q62 94 92 81Q113 74 146 73Q180 71 208 72Q217 72 224 72Q231 72 240 72Q268 72 302 73Q336 74 356 81Q386 94 399 124Q406 144 407 178Q409 212 408 240Q408 249 408 256Q408 263 408 272Q409 300 407 334Q406 368 399 388L399 388Z"/></svg>Instagram</a>
-  <a class="pill" href="https://www.threads.com/@kasane_app" target="_blank" rel="noopener"><svg class="sns-icon" viewBox="16 16 414 480" aria-hidden="true" focusable="false"><path d="M332 236Q333 236 335 237L335 237L335 237Q336 238 338 239Q382 260 400 300Q412 328 408 367Q404 406 369 443Q318 496 227 496L226 496L226 496Q121 495 66 426Q17 364 16 256L16 256L16 256L16 256L16 256Q17 148 66 86Q121 17 226 16L227 16L227 16Q333 17 389 86Q417 120 430 168L389 178L389 178Q379 140 357 113Q313 59 227 58Q141 59 98 113Q59 163 58 256Q59 349 98 399Q141 453 227 454Q301 454 340 413Q364 388 367 362Q370 336 362 317Q352 295 330 282Q324 322 305 347Q279 380 232 382Q196 384 168 366Q137 344 134 307Q133 270 158 247Q184 224 229 220Q261 219 289 223Q285 201 274 188Q259 170 228 170L227 170L227 170Q214 170 199 175Q185 181 174 197L139 173L139 173Q169 129 227 128L228 128L228 128Q324 131 332 236L331 236L332 236ZM176 305Q177 323 193 332L193 332L193 332Q210 341 230 340Q250 340 268 326Q285 312 290 267Q270 262 246 262Q239 262 232 263Q200 265 187 277Q174 290 176 304L176 304L176 305Z"/></svg>Threads</a>
-  <a class="pill" href="https://www.youtube.com/@kasane_app" target="_blank" rel="noopener"><svg class="sns-icon" viewBox="15 64 546 384" aria-hidden="true" focusable="false"><path fill="#FF0000" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>YouTube</a>
-  <a class="pill" href="https://www.tiktok.com/@kasane_app" target="_blank" rel="noopener"><svg class="sns-icon" viewBox="0 0 448 512" aria-hidden="true" focusable="false"><path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"/></svg>TikTok</a>
-</section>
+  <!-- 二 名前の由来:縦書きの見出しが、筆で引くように上から現れる -->
+  <section id="origin" class="chap" data-sc-act="flow" data-sc-drift="#f1ebe1">
+    <div class="origin">
+      <div class="origin__text sc-stack" data-sc-in data-sc-stagger="70">
+        <p class="body">平安の人々は、衣の色を幾重にも重ね、季節や心を表しました。一枚ずつ重ねた色が、ひとつの景色になる。資産も同じように、積み重ねた一つひとつが、やがて一枚の地図になります。</p>
+        <span class="latin">KASANE NO IROME</span>
+      </div>
+      <figure class="eri" data-sc-in>
+        <svg viewBox="0 0 360 470" role="img" aria-label="衿もとに六色が重なる図。外から墨・藍・千歳緑・深緋・江戸紫・金">
+          <defs><linearGradient id="eri-kinu" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ddd2bf"/><stop offset=".42" stop-color="#ebe3d4"/><stop offset=".62" stop-color="#e9e0d0"/><stop offset="1" stop-color="#d9cdb9"/></linearGradient><filter id="eri-edge" x="-2%" y="-2%" width="104%" height="104%"><feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="2" seed="3"/><feDisplacementMap in="SourceGraphic" scale="3.2" xChannelSelector="R" yChannelSelector="G"/></filter></defs>
+          <g filter="url(#eri-edge)">
+          <polygon class="l" points="164.0,20.0 155.6,20.0 193.1,144.7 198.6,135.2" fill="var(--kin)"/>
+          <polygon class="l" points="155.6,20.0 147.3,20.0 187.5,154.2 193.1,144.7" fill="var(--edo)"/>
+          <polygon class="l" points="147.3,20.0 138.9,20.0 182.0,163.7 187.5,154.2" fill="var(--kokiake)"/>
+          <polygon class="l" points="138.9,20.0 130.6,20.0 176.5,173.1 182.0,163.7" fill="var(--chitose)"/>
+          <polygon class="l" points="130.6,20.0 122.2,20.0 171.0,182.6 176.5,173.1" fill="var(--ai)"/>
+          <polygon class="l" points="122.2,20.0 113.9,20.0 165.5,192.1 171.0,182.6" fill="var(--sumi)"/>
+          <polygon class="l" points="113.9,20.0 -42.7,20.0 62.3,370.1 165.5,192.1" fill="url(#eri-kinu)"/>
+          <polygon class="l" points="196.0,20.0 205.2,20.0 -95.8,539.0 -105.0,539.0" fill="var(--kin)"/>
+          <polygon class="l" points="205.2,20.0 214.5,20.0 -86.5,539.0 -95.8,539.0" fill="var(--edo)"/>
+          <polygon class="l" points="214.5,20.0 223.7,20.0 -77.3,539.0 -86.5,539.0" fill="var(--kokiake)"/>
+          <polygon class="l" points="223.7,20.0 233.0,20.0 -68.0,539.0 -77.3,539.0" fill="var(--chitose)"/>
+          <polygon class="l" points="233.0,20.0 242.2,20.0 -58.8,539.0 -68.0,539.0" fill="var(--ai)"/>
+          <polygon class="l" points="242.2,20.0 251.5,20.0 -49.5,539.0 -58.8,539.0" fill="var(--sumi)"/>
+          <polygon class="l" points="251.5,20.0 424.9,20.0 123.9,539.0 -49.5,539.0" fill="url(#eri-kinu)"/>
+          </g>
+        </svg>
+        <figcaption><span class="t">Kasane の襲</span>外から <span class="nb">墨・藍・千歳緑・</span><span class="nb">深緋・江戸紫・金</span></figcaption>
+      </figure>
+      <div class="origin__head" data-sc-reveal="down" data-sc-reveal-at="0.12 0.5">
+        <h2 class="h2 tate">名前は、<br>「<ruby>襲<rt>かさね</rt></ruby>の色目」から。</h2>
+      </div>
+    </div>
+  </section>
 
-<section class="footer-links">
-  <a class="pill" href="{{ '/privacy/' | relative_url }}">プライバシーポリシー</a>
-  <a class="pill" href="{{ '/support/' | relative_url }}">サポート・お問い合わせ</a>
-</section>
+  <!-- 三 ヒートマップ:画面が文字と違う速さで浮かぶ -->
+  <section id="heatmap" class="chap" data-sc-act="flow" data-sc-drift="#f1ebe0">
+    <div class="heat">
+      <div class="sc-stack" data-sc-in data-sc-stagger="60">
+        <h2 class="h2">大きさは評価額、<br>色は前日比。</h2>
+        <p class="body">保有している銘柄が、評価額に応じた大きさのタイルで並びます。上がった銘柄は緑、下がった銘柄は赤。動きが大きいほど明るく光り、変化のない銘柄は灰色です。どこに資産が偏っているか、今日どれが動いたかが、ひと目でわかります。</p>
+        <ul class="points">
+          <li>日本株・米国株・投資信託をまとめて円で表示(USD/JPYは自動取得)</li>
+          <li>一覧は評価額・損益額・損益率で並び替え</li>
+          <li>色の規則は米国式(上昇=緑)と日本式(上昇=赤)から選べます</li>
+          <li>目のマークで、ホームの金額を隠せます</li>
+        </ul>
+      </div>
+      <figure style="margin:0" data-sc-parallax="-1.1">
+        <div class="window"><img src="{{ '/assets/screens/tier1.jpg' | relative_url }}" width="480" height="493" alt="ヒートマップの画面。銘柄ごとのタイルが評価額の大きさで並び、上がった銘柄は緑、下がった銘柄は赤で表示されている"></div>
+        <figcaption class="cap">画面はサンプルデータです</figcaption>
+      </figure>
+    </div>
+  </section>
 
-<p class="meta note">
-  画面はサンプルデータで表示しています。本アプリが表示する株価・為替などは参考情報であり、投資の助言や推奨は行いません。
-</p>
+  <!-- 四 光の色(山場):六枚の染めた和紙が、一枚ずつしみて重なる -->
+  <section id="colors" class="colors chap" data-sc-act="pin" data-sc-span="4.2" data-sc-drift="#ebe3d5">
+    <div data-sc-stage>
+      <div class="kc">
+        <div class="kc__head">
+          <h2 class="h2 tate">資産が育つと、<br>光の色が深まる。</h2>
+          <p class="body">評価額の合計が節目を越えるごとに、画面に差す光の色が変わります。色の名前は、日本の伝統色から。</p>
+        </div>
+        <div class="kc__field">
+          <div class="kc__stack" aria-hidden="true">
+            <div class="dye"></div>
+            <div class="dye"></div>
+            <div class="dye"></div>
+            <div class="dye"></div>
+            <div class="dye"></div>
+            <div class="dye"></div>
+          </div>
+          <div class="kc__screen">
+            <div class="imgs">
+              <img src="{{ '/assets/screens/tier0.jpg' | relative_url }}" width="480" height="493" alt="光の色が墨の画面">
+              <img src="{{ '/assets/screens/tier1.jpg' | relative_url }}" width="480" height="493" alt="光の色が藍の画面">
+              <img src="{{ '/assets/screens/tier2.jpg' | relative_url }}" width="480" height="493" alt="光の色が千歳緑の画面">
+              <img src="{{ '/assets/screens/tier3.jpg' | relative_url }}" width="480" height="493" alt="光の色が深緋の画面">
+              <img src="{{ '/assets/screens/tier4.jpg' | relative_url }}" width="480" height="493" alt="光の色が江戸紫の画面">
+              <img src="{{ '/assets/screens/tier5.jpg' | relative_url }}" width="480" height="493" alt="光の色が金の画面">
+            </div>
+          </div>
+          <ol class="kc__scale">
+            <li><b>墨</b><small>〜100万円</small></li>
+            <li><b>藍</b><small>100万円〜</small></li>
+            <li><b>千歳緑</b><small>300万円〜</small></li>
+            <li><b>深緋</b><small>500万円〜</small></li>
+            <li><b>江戸紫</b><small>1,000万円〜</small></li>
+            <li><b>金</b><small>3,000万円〜</small></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 五 毎日のグラフ:線を引くように、左から右へ現れる -->
+  <section id="history" class="chap" data-sc-act="flow" data-sc-drift="#efe8dd">
+    <div class="hist">
+      <figure class="hist__fig" style="margin:0" data-sc-in>
+        <div class="phone"><img src="{{ '/assets/screens/history.jpg' | relative_url }}" width="804" height="1748" alt="評価額の推移のグラフの画面。評価額と取得額の線が並んでいる"></div>
+      </figure>
+      <div class="sc-stack" data-sc-in data-sc-stagger="60">
+        <h2 class="h2">毎日の歩みを、<br>グラフに。</h2>
+        <p class="body">アプリを開いた日の評価額を記録し、推移をグラフにします。取得額の線と並べれば、含み損益の広がりが見えてきます。</p>
+        <ul class="points"><li>7日・30日・1年・全期間で表示</li><li>評価額・取得額の線を自由に表示・非表示</li></ul>
+        <p class="cap"><span class="tag">今後追加予定</span>オルカン・S&amp;P500など指数との比較</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 六 五つの約束:罫線の上に、静かに並ぶ -->
+  <section id="privacy" class="chap" data-sc-act="flow" data-sc-drift="#f1ebe1">
+    <div class="promise">
+      <h2 class="h2" data-sc-in>取り込みはかんたん。<br>データは<span class="nb">iPhoneの中だけに。</span></h2>
+      <ol class="promise__list" data-sc-in data-sc-stagger="70">
+        <li><span class="num">一</span><div><h3>SBI証券から取り込み</h3><p>日本株と投資信託は、保有一覧のCSVを選ぶだけ。米国株は、画面のスクリーンショットか表のコピーで。文字の読み取りもiPhoneの中で行います。</p></div></li>
+        <li><span class="num">二</span><div><h3>アカウント登録なし</h3><p>会員登録も、証券口座のIDやパスワードの入力も必要ありません。</p></div></li>
+        <li><span class="num">三</span><div><h3>保有データは外に出さない</h3><p>保有銘柄はiPhoneの中だけに保存し、開発者のサーバーにも送りません。詳しくは<a href="{{ '/privacy/' | relative_url }}">プライバシーポリシー</a>へ。</p></div></li>
+        <li><span class="num">四</span><div><h3>載せるものを選んでシェア</h3><p>ヒートマップと光の色を、1枚の画像に。最初は金額を載せない設定です。光の色の名前には節目の金額の目安(例: 1,000万円〜)が添えられるので、載せたくないときは「光の色の名前を表示」をオフにできます。画像はiPhoneの中で作ります。</p></div></li>
+        <li><span class="num">五</span><div><h3>機種変更もバックアップで</h3><p>記録を1つのファイルに書き出して、新しいiPhoneでも元に戻せます。</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 七 はじまり:色がもう一度だけ深まり、一行とボタンが残る -->
+  <section id="download" class="close chap" data-sc-act="pin" data-sc-span="1.3" data-sc-drift="#ece4d7">
+    <div data-sc-stage>
+      <div class="close__main" data-sc-cue="0 1 0 0">
+        <div class="layers" aria-hidden="true"><i style="background:var(--kin)"></i><i style="background:var(--edo)"></i><i style="background:var(--kokiake)"></i><i style="background:var(--chitose)"></i><i style="background:var(--ai)"></i><i style="background:var(--sumi)"></i></div>
+        <h2 class="h2"><span class="nw">重ねた日々が、</span><span class="nw">色になる。</span></h2>
+        <a class="store" href="https://apps.apple.com/jp/app/id6819918637"><img src="{{ '/assets/app-store-badge-ja.svg' | relative_url }}" alt="App Storeからダウンロード" width="140" height="52"></a>
+      </div>
+      <footer class="foot">
+{% include sns.html %}
+        <div class="links"><a href="{{ '/privacy/' | relative_url }}">プライバシーポリシー</a><a href="{{ '/support/' | relative_url }}">サポート・お問い合わせ</a></div>
+        <p class="fine">画面はサンプルデータで表示しています。本アプリが表示する株価・為替などは参考情報であり、投資の助言や推奨は行いません。Apple、Appleのロゴは、米国その他の国で登録されたApple Inc.の商標です。App StoreはApple Inc.のサービスマークです。記載の会社名・商品名・指数名は、各社の商標または登録商標です。本アプリは、記載の証券会社・運用会社・情報サイトとは提携・関係はありません。<br>© {{ 'now' | date: '%Y' }} Takato Yoshida</p>
+      </footer>
+    </div>
+  </section>
