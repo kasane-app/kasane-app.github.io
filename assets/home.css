@@ -22,16 +22,21 @@ a { color: inherit; }
 :focus-visible { outline: 2px solid var(--sc-ink); outline-offset: 4px; }
 
 /* ---------- 紙の粒(和紙の繊維) ---------- */
-.fiber { position: fixed; inset: 0; z-index: 2; pointer-events: none; opacity: .28; mix-blend-mode: multiply; }
-.fiber svg { width: 100%; height: 100%; }
+/* 繊維・にじむ縁・粒は、前もって画像にしたもの(assets/washi/)。iPhone の Safari で SVG のフィルターをその場で描くと重いため(2026-10-30) */
+.fiber { position: fixed; inset: 0; z-index: 2; pointer-events: none; opacity: .28; background: url(washi/fiber.png) 0 0 / 512px 512px repeat; }
+.sc-grain::before { background-image: url(washi/grain.png); }
 
 /* ---------- 染めの層(このページだけの動き):章を通るたびに一枚ずつしみて残る ---------- */
 .someiro { position: fixed; inset: 0; z-index: 0; pointer-events: none; --deep: 0; }
-.dye { position: absolute; mix-blend-mode: multiply; --b: 0; opacity: calc(var(--b) * (0.12 + var(--deep) * 0.1));
-  -webkit-mask-image: radial-gradient(circle at var(--ox, 50%) var(--oy, 50%), #000 0, #000 calc(var(--b) * 40%), transparent calc(var(--b) * 40% + 34%));
-          mask-image: radial-gradient(circle at var(--ox, 50%) var(--oy, 50%), #000 0, #000 calc(var(--b) * 40%), transparent calc(var(--b) * 40% + 34%)); }
-.dye svg, .sheet svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
-.dye rect, .sheet rect { fill: var(--c); }
+/* 染めの紙:色の面を、にじむ縁の形(edge.png)と、しみ広がる丸(--b)の両方で切り抜く。重なりは同じ層の中だけで掛け算 */
+.someiro, .hero__far, .kc__stack { isolation: isolate; }
+.dye { position: absolute; mix-blend-mode: multiply; background: var(--c); --b: 0; opacity: calc(var(--b) * (0.12 + var(--deep) * 0.1)); --r: 40%; --soft: 34%;
+  -webkit-mask-image: url(washi/edge.png), radial-gradient(circle at var(--ox, 50%) var(--oy, 50%), #000 0, #000 calc(var(--b) * var(--r)), transparent calc(var(--b) * var(--r) + var(--soft)));
+          mask-image: url(washi/edge.png), radial-gradient(circle at var(--ox, 50%) var(--oy, 50%), #000 0, #000 calc(var(--b) * var(--r)), transparent calc(var(--b) * var(--r) + var(--soft)));
+  -webkit-mask-size: 100% 100%, auto; mask-size: 100% 100%, auto;
+  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+  -webkit-mask-composite: source-in; mask-composite: intersect; }
+.sheet { background: var(--c); -webkit-mask: url(washi/edge.png) 0 0 / 100% 100% no-repeat; mask: url(washi/edge.png) 0 0 / 100% 100% no-repeat; }
 .someiro .dye { width: 46vw; height: 62vh; }
 .someiro .dye:nth-child(1) { left: 58vw; top: -6vh;  --c: var(--sumi);    --ox: 70%; --oy: 30%; rotate: -4deg; }
 .someiro .dye:nth-child(2) { left: 64vw; top: 14vh;  --c: var(--ai);      --ox: 40%; --oy: 40%; rotate: 3deg; }
@@ -107,7 +112,7 @@ ruby rt { font-size: .38em; letter-spacing: .12em; color: var(--sc-ink-soft); }
 .plate__btn { font: inherit; color: var(--sc-ink-soft); background: none; border: 0; border-bottom: 1px solid var(--rule); padding: 8px 2px; cursor: pointer; }
 .plate__btn:hover { color: var(--sc-ink); }
 .hero__front { z-index: 4; right: -4vw; bottom: -30vh; width: 66vw; height: 52vh; rotate: -1.4deg; pointer-events: none; }
-.hero__front .sheet { inset: 0; --c: #f4efe5; opacity: .9; filter: drop-shadow(0 -8px 18px rgb(var(--sc-shadow-color) / .1)); }
+.hero__front .sheet { inset: 0; --c: #f4efe5; opacity: .9; }
 @media (max-width: 860px) {
   .hero__copy { top: 96px; max-width: none; right: var(--gut); }
   .hero__copy .body { margin-top: 18px; }
@@ -182,9 +187,7 @@ ruby rt { font-size: .38em; letter-spacing: .12em; color: var(--sc-ink-soft); }
 .kc__head .body { writing-mode: vertical-rl; font-size: 15px; line-height: 2.2; height: min(52vh, 440px); max-width: none; margin-top: 3.4em; }
 .kc__field { position: relative; }
 .kc__stack { position: absolute; left: 0; top: 0; width: min(54vw, 720px); height: min(66vh, 600px); }
-.kc__stack .dye { width: 52%; height: 72%; opacity: calc(var(--b) * .4);
-  -webkit-mask-image: radial-gradient(circle at var(--ox) var(--oy), #000 0, #000 calc(var(--b) * 70%), transparent calc(var(--b) * 70% + 30%));
-          mask-image: radial-gradient(circle at var(--ox) var(--oy), #000 0, #000 calc(var(--b) * 70%), transparent calc(var(--b) * 70% + 30%)); }
+.kc__stack .dye { width: 52%; height: 72%; opacity: calc(var(--b) * .4); --r: 70%; --soft: 30%; }
 .kc__stack .dye:nth-child(1) { opacity: calc(var(--b) * .26); --b: var(--b0); --c: var(--sumi);    left: 0;   top: 0;     --ox: 20%; --oy: 20%; rotate: -2deg; }
 .kc__stack .dye:nth-child(2) { --b: var(--b1); --c: var(--ai);      left: 9%;  top: 4.5%; --ox: 30%; --oy: 30%; rotate: 1.5deg; }
 .kc__stack .dye:nth-child(3) { --b: var(--b2); --c: var(--chitose); left: 18%; top: 9%;   --ox: 40%; --oy: 40%; rotate: -1deg; }

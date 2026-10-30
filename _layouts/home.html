@@ -17,24 +17,16 @@
 </head>
 <body>
 
-<!-- 和紙の縁(ぎざぎざ)と繊維。シートと染めはこのフィルターを使う -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-  <filter id="washi" x="-6%" y="-6%" width="112%" height="112%">
-    <feTurbulence type="fractalNoise" baseFrequency="0.028" numOctaves="3" seed="7" result="warp"/>
-    <feDisplacementMap in="SourceGraphic" in2="warp" scale="18" xChannelSelector="R" yChannelSelector="G"/>
-  </filter>
-  <filter id="paper"><feTurbulence type="fractalNoise" baseFrequency="0.7 0.035" numOctaves="2" seed="11"/><feColorMatrix type="matrix" values="0 0 0 0 .42  0 0 0 0 .36  0 0 0 0 .27  0 0 0 -2.2 1.05"/></filter>
-</svg>
 
 <div class="someiro" aria-hidden="true">
-  <div class="dye"><svg><rect x="3%" y="3%" width="94%" height="94%" filter="url(#washi)"/></svg></div>
-  <div class="dye"><svg><rect x="3%" y="3%" width="94%" height="94%" filter="url(#washi)"/></svg></div>
-  <div class="dye"><svg><rect x="3%" y="3%" width="94%" height="94%" filter="url(#washi)"/></svg></div>
-  <div class="dye"><svg><rect x="3%" y="3%" width="94%" height="94%" filter="url(#washi)"/></svg></div>
-  <div class="dye"><svg><rect x="3%" y="3%" width="94%" height="94%" filter="url(#washi)"/></svg></div>
-  <div class="dye"><svg><rect x="3%" y="3%" width="94%" height="94%" filter="url(#washi)"/></svg></div>
+  <div class="dye"></div>
+  <div class="dye"></div>
+  <div class="dye"></div>
+  <div class="dye"></div>
+  <div class="dye"></div>
+  <div class="dye"></div>
 </div>
-<div class="fiber" aria-hidden="true"><svg><rect width="100%" height="100%" filter="url(#paper)"/></svg></div>
+<div class="fiber" aria-hidden="true"></div>
 <div class="sc-grain" aria-hidden="true"></div>
 
 <header class="bar">

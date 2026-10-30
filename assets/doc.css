@@ -20,14 +20,15 @@ a { color: inherit; }
 :focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
 
 /* ---------- 紙の繊維と、もう染まっている紙 ---------- */
-.fiber { position: fixed; inset: 0; z-index: 2; pointer-events: none; opacity: .28; mix-blend-mode: multiply; }
-.fiber svg { width: 100%; height: 100%; }
-.someiro { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
-.dye { position: absolute; width: 40vw; height: 56vh; mix-blend-mode: multiply; opacity: .1;
-  -webkit-mask-image: radial-gradient(circle at var(--ox) var(--oy), #000 0, #000 30%, transparent 72%);
-          mask-image: radial-gradient(circle at var(--ox) var(--oy), #000 0, #000 30%, transparent 72%); }
-.dye svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
-.dye rect { fill: var(--c); }
+/* 繊維・にじむ縁は、前もって画像にしたもの(assets/washi/)。iPhone の Safari で SVG のフィルターをその場で描くと重いため(2026-10-30) */
+.fiber { position: fixed; inset: 0; z-index: 2; pointer-events: none; opacity: .28; background: url(washi/fiber.png) 0 0 / 512px 512px repeat; }
+.someiro { position: fixed; inset: 0; z-index: 0; pointer-events: none; isolation: isolate; }
+.dye { position: absolute; width: 40vw; height: 56vh; mix-blend-mode: multiply; opacity: .1; background: var(--c);
+  -webkit-mask-image: url(washi/edge.png), radial-gradient(circle at var(--ox) var(--oy), #000 0, #000 30%, transparent 72%);
+          mask-image: url(washi/edge.png), radial-gradient(circle at var(--ox) var(--oy), #000 0, #000 30%, transparent 72%);
+  -webkit-mask-size: 100% 100%, auto; mask-size: 100% 100%, auto;
+  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+  -webkit-mask-composite: source-in; mask-composite: intersect; }
 .dye:nth-child(1) { left: 74vw; top: -10vh; --c: var(--sumi); --ox: 60%; --oy: 30%; rotate: -4deg; }
 .dye:nth-child(2) { left: 80vw; top: 8vh;   --c: var(--page); --ox: 40%; --oy: 50%; rotate: 3deg; opacity: .14; }
 .dye:nth-child(3) { left: 70vw; top: 60vh;  --c: var(--kin);  --ox: 50%; --oy: 60%; rotate: -2deg; opacity: .08; }
