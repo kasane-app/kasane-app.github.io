@@ -23,7 +23,8 @@ a { color: inherit; }
 
 /* ---------- 紙の粒(和紙の繊維) ---------- */
 /* 繊維・にじむ縁・粒は、前もって画像にしたもの(assets/washi/)。iPhone の Safari で SVG のフィルターをその場で描くと重いため(2026-10-30) */
-.fiber { position: fixed; inset: 0; z-index: 2; pointer-events: none; opacity: .28; background: url(washi/fiber.png) 0 0 / 512px 512px repeat; }
+.fiber { position: fixed; inset: 0; z-index: 1; pointer-events: none; opacity: .28; background: url(washi/fiber.png) 0 0 / 512px 512px repeat; }
+#top { position: relative; z-index: 3; }  /* 繊維は本文の下に(動画や画面の上にはかけない) */
 .sc-grain::before { background-image: url(washi/grain.png); }
 
 /* ---------- 染めの層(このページだけの動き):章を通るたびに一枚ずつしみて残る ---------- */
