@@ -221,6 +221,9 @@ ruby rt { font-size: .38em; letter-spacing: .12em; color: var(--sc-ink-soft); }
   .kc__head { order: 0; justify-content: flex-end; }
   .kc__head .h2 { height: auto; font-size: 1.55rem; }
   .kc__head .body { display: none; }
+  /* 舞台の高さも見えている高さに合わせる。100svh のままだと、スクロールで
+     下のバーが隠れたとき(Brave・LINE で大きい)に、その分だけ下が空く */
+  .colors [data-sc-stage] { height: 100dvh; }
   /* 和紙の束と色の名前を縦に並べ、束は残りの高さに合わせる。
      舞台は 100svh、vh は大きい方の高さなので、vh で束の高さを決めると、
      Brave や LINE のように上下のバーが大きいブラウザでは色の名前と重なる */
